@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -15,8 +16,10 @@ namespace csharp_example
 		[SetUp]
 		public void Start()
 		{
+			//ChromeOptions options = new ChromeOptions();
 			driver = new ChromeDriver();
 			wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+			//Debug.WriteLine(options);
 		}
 
 		[Test]
