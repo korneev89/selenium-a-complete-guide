@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
+using System.Threading;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -18,8 +19,8 @@ namespace csharp_example
 		public void Start()
 		{
 			//driver = new ChromeDriver();
-			driver = new FirefoxDriver();
-			//driver = new InternetExplorerDriver();
+			//driver = new FirefoxDriver();
+			driver = new InternetExplorerDriver();
 			wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 		}
 
@@ -39,7 +40,11 @@ namespace csharp_example
 			// checks for page with campaigh block
 			CheckFontSizeAndColor(regPriceC, campPriceC);
 
+
 			driver.FindElement(By.CssSelector("#box-campaigns a.link")).Click();
+
+			// while execute test in IE there is NoSuchElementException 
+			Thread.Sleep(1000);
 
 			var regPriceP = driver.FindElement(By.CssSelector("#box-product .regular-price"));
 			var campPriceP = driver.FindElement(By.CssSelector("#box-product .campaign-price"));
@@ -62,11 +67,13 @@ namespace csharp_example
 		{
 			var regPriceColor = ColorHelper.ParseColor(regPrice.GetCssValue("color"));
 			ColorIsGrey(regPriceColor);
-			Assert.AreEqual(regPrice.GetCssValue("text-decoration-line"), "line-through");
+			Assert.True(regPrice.GetCssValue("text-decoration").Contains("line-through"));
 
 			var campPriceColor = ColorHelper.ParseColor(campPrice.GetCssValue("color"));
 			ColorIsRed(campPriceColor);
-			Assert.AreEqual(campPrice.GetCssValue("font-weight"), "700");
+			var fontWeight = campPrice.GetCssValue("font-weight");
+			 
+			Assert.GreaterOrEqual(int.Parse(fontWeight), 700);
 
 			var regPriceSize = regPrice.GetCssValue("font-size");
 			var rSize = (int)float.Parse(regPriceSize.Substring(0, regPriceSize.Length - 2), CultureInfo.InvariantCulture);
