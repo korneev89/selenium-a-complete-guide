@@ -84,5 +84,45 @@ namespace csharp_example
 				}
 			}
 		}
+
+		[Test]
+		public void CheckGeoZonesOrder()
+		{
+			LoginAsAdmin();
+			string geoZonesURL = "http://localhost:8080/litecart/admin/?app=geo_zones&doc=geo_zones";
+			driver.Url = geoZonesURL;
+
+			var countriesCount = driver.FindElements(By.CssSelector("tbody > tr.row")).Count;
+			int zonesCount;
+			string prevZone;
+			string currentZone;
+
+			for (int i = 0; i < countriesCount; i++)
+			{
+				driver.FindElements(By.CssSelector("tbody > tr.row > td:nth-child(3) > a"))[i].Click();
+
+				// throw the last row
+				zonesCount = driver.FindElements(By.CssSelector("table#table-zones > tbody > tr:not(.header)")).Count - 1;
+
+				Debug.WriteLine("Check zones order...");
+
+				for (int k = 0; k < zonesCount-1; k++)
+				{
+					prevZone = driver
+						.FindElements(By.CssSelector("table#table-zones > tbody > tr:not(.header) > td:nth-child(3) > select > option[selected]"))[k]
+						.GetAttribute("textContent");
+
+					currentZone = driver
+						.FindElements(By.CssSelector("table#table-zones > tbody > tr:not(.header) > td:nth-child(3) > select > option[selected]"))[k + 1]
+						.GetAttribute("textContent");
+
+					int compareResult = string.Compare(currentZone, prevZone);
+					Assert.Greater(compareResult, 0);
+					Debug.WriteLine(String.Concat(prevZone, " < ", currentZone));
+				}
+
+				driver.Url = geoZonesURL;
+			}
+		}
 	}
 }
