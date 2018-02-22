@@ -40,13 +40,5 @@ namespace csharp_example
 				}
 			}
 		}
-
-		private void LoginAsAdmin()
-		{
-			driver.Url = "http://localhost:8080/litecart/admin/login.php";
-			driver.FindElement(By.Name("username")).SendKeys("admin");
-			driver.FindElement(By.Name("password")).SendKeys("admin");
-			driver.FindElement(By.Name("login")).Click();
-		}
 	}
 }

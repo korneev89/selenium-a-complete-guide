@@ -63,8 +63,11 @@
     <Compile Include="Lesson 3\IETests.cs" />
     <Compile Include="Lesson 4\Ex7.cs" />
     <Compile Include="Lesson 4\Ex8.cs" />
+    <Compile Include="Lesson 5\ColorHelper.cs" />
+    <Compile Include="Lesson 5\Ex10.cs" />
+    <Compile Include="Lesson 5\Ex9.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Lesson 3\TestBase.cs" />
+    <Compile Include="TestBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
