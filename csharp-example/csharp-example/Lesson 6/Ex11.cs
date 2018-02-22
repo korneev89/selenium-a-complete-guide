@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
-using System.Drawing;
-using System.Globalization;
-using System.Threading;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -75,56 +71,7 @@ namespace csharp_example
 			driver.FindElement(By.CssSelector("button[name=login]")).Click();
 
 			driver.FindElement(By.CssSelector("#box-account > div > ul > li:nth-child(4) > a")).Click();
-
-
-
-
-
-
-
-
-
-
-			//driver.FindElement(By.CssSelector("input[name=tax_id]")).SendKeys(userInfo.taxId);
-
-
-
-			//var regPriceC = driver.FindElement(By.CssSelector("#box-campaigns .regular-price"));
-			//var campPriceC = driver.FindElement(By.CssSelector("#box-campaigns .campaign-price"));
-
-			//var campaignBlockInfo = new ProductInfo(
-			//	driver.FindElement(By.CssSelector("#box-campaigns .name")).GetAttribute("textContent"),
-			//	regPriceC.GetAttribute("textContent"),
-			//	campPriceC.GetAttribute("textContent")
-			//	);
-			//// checks for page with campaigh block
-			//CheckFontSizeAndColor(regPriceC, campPriceC);
-
-
-			//driver.FindElement(By.CssSelector("#box-campaigns a.link")).Click();
-
-			//// while execute test in IE there is NoSuchElementException 
-			//Thread.Sleep(1000);
-
-			//var regPriceP = driver.FindElement(By.CssSelector("#box-product .regular-price"));
-			//var campPriceP = driver.FindElement(By.CssSelector("#box-product .campaign-price"));
-
-			//var productPageInfo = new ProductInfo(
-			//	driver.FindElement(By.CssSelector("#box-product .title")).GetAttribute("textContent"),
-			//	regPriceP.GetAttribute("textContent"),
-			//	campPriceP.GetAttribute("textContent")
-			//	);
-
-			//// checks for page with campaigh block
-			//CheckFontSizeAndColor(regPriceP, campPriceP);
-
-			//Assert.AreNotEqual(campaignBlockInfo, productPageInfo);
-			//Debug.WriteLine(campaignBlockInfo);
-			//Debug.WriteLine(productPageInfo);
 		}
-
-
-
 
 		public class UserInfo
 		{
