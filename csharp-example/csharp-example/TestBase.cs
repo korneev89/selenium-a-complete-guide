@@ -26,5 +26,18 @@ namespace csharp_example
 			driver.FindElement(By.Name("password")).SendKeys("admin");
 			driver.FindElement(By.Name("login")).Click();
 		}
+
+		public Boolean IsElementPresent(IWebDriver driver, By locator)
+		{
+			try
+			{
+				wait = new WebDriverWait(driver, TimeSpan.FromSeconds(1));
+				return driver.FindElements(locator).Count > 0;
+			}
+			finally
+			{
+				wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+			}
+		}
 	}
 }
