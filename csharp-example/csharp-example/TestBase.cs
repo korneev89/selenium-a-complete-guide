@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
@@ -38,6 +40,16 @@ namespace csharp_example
 			{
 				wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 			}
+		}
+
+		public static Func<IWebDriver, string> ThereIsWindowOtherThan(IEnumerable<string> oldWindows)
+		{
+			string GetNewWindow(IWebDriver driver)
+			{
+				return driver.WindowHandles.Except(oldWindows).ToList().Single();
+			}
+
+			return GetNewWindow;
 		}
 	}
 }
