@@ -76,7 +76,16 @@
     <Compile Include="Lesson 7\Ex13.cs" />
     <Compile Include="Lesson 8\Ex14.cs" />
     <Compile Include="Lesson 9\Ex15.cs" />
-    <Compile Include="Page Objects Model\E13.cs" />
+    <Compile Include="Page Objects Model\App\Application.cs" />
+    <Compile Include="Page Objects Model\Model\Customer.cs" />
+    <Compile Include="Page Objects Model\Pages\AdminPanelLoginPage.cs" />
+    <Compile Include="Page Objects Model\Pages\CartPage.cs" />
+    <Compile Include="Page Objects Model\Pages\Page.cs" />
+    <Compile Include="Page Objects Model\Pages\ProductPage.cs" />
+    <Compile Include="Page Objects Model\Pages\StoreMainPage.cs" />
+    <Compile Include="Page Objects Model\Tests\WorkingWithCartTests.cs" />
+    <Compile Include="Page Objects Model\Tests\DataProviders.cs" />
+    <Compile Include="Page Objects Model\Tests\TestBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestBaseOld.cs" />
   </ItemGroup>
