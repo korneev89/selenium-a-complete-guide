@@ -13,6 +13,7 @@ namespace csharp_example
 	{
 		public IWebDriver driver;
 		public WebDriverWait wait;
+		public Proxy proxy;
 
 		[TearDown]
 		public void Stop()

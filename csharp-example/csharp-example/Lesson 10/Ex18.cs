@@ -8,20 +8,28 @@ using OpenQA.Selenium.Support.UI;
 namespace csharp_example
 {
 	[TestFixture]
-	public class Ex17 : TestBase
+	public class Ex18 : TestBase
 	{
 		[SetUp]
 		public void Start()
 		{
-			ChromeOptions options = new ChromeOptions();
-			options.SetLoggingPreference("performance", LogLevel.All);
+			proxy = new Proxy
+			{
+				Kind = ProxyKind.Manual,
+				HttpProxy = "localhost:8888"
+			};
+
+			ChromeOptions options = new ChromeOptions
+			{
+				Proxy = proxy
+			};
 
 			driver = new ChromeDriver(options);
 			wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 		}
 
 		[Test]
-		public void CheckBrowserLog()
+		public void UsingFiddler()
 		{
 			LoginAsAdmin();
 			var logTypes = driver.Manage().Logs.AvailableLogTypes;

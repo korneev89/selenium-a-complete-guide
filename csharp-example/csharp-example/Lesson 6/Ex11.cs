@@ -28,35 +28,35 @@ namespace csharp_example
 
 			var userInfo = new UserInfo()
 			{
-				address1 = "test_address1",
-				address2 = "test_address2",
-				city = "test_city",
-				company = "test_company",
-				email = "test" + d.ToString() + "@ya.ru",
-				firstname = "Ivan_test",
-				lastname = "Ivanov_test",
-				password = "paSSw0rd!",
-				phone = "+79876543210",
-				postcode = "12345",
-				taxId = "testTaxId"
+				Address1 = "test_address1",
+				Address2 = "test_address2",
+				City = "test_city",
+				Company = "test_company",
+				Email = "test" + d.ToString() + "@ya.ru",
+				Firstname = "Ivan_test",
+				Lastname = "Ivanov_test",
+				Password = "paSSw0rd!",
+				Phone = "+79876543210",
+				Postcode = "12345",
+				TaxId = "testTaxId"
 			};
 
 			var countrySelect = new SelectElement(driver.FindElement(By.CssSelector("select[name=country_code]")));
 			countrySelect.SelectByText("United States");
 
-			driver.FindElement(By.CssSelector("input[name=tax_id]")).SendKeys(userInfo.taxId);
-			driver.FindElement(By.CssSelector("input[name=company]")).SendKeys(userInfo.company);
-			driver.FindElement(By.CssSelector("input[name=firstname]")).SendKeys(userInfo.firstname);
-			driver.FindElement(By.CssSelector("input[name=lastname]")).SendKeys(userInfo.lastname);
-			driver.FindElement(By.CssSelector("input[name=address1]")).SendKeys(userInfo.address1);
-			driver.FindElement(By.CssSelector("input[name=address2]")).SendKeys(userInfo.address2);
-			driver.FindElement(By.CssSelector("input[name=postcode]")).SendKeys(userInfo.postcode);
-			driver.FindElement(By.CssSelector("input[name=city]")).SendKeys(userInfo.city);
+			driver.FindElement(By.CssSelector("input[name=tax_id]")).SendKeys(userInfo.TaxId);
+			driver.FindElement(By.CssSelector("input[name=company]")).SendKeys(userInfo.Company);
+			driver.FindElement(By.CssSelector("input[name=firstname]")).SendKeys(userInfo.Firstname);
+			driver.FindElement(By.CssSelector("input[name=lastname]")).SendKeys(userInfo.Lastname);
+			driver.FindElement(By.CssSelector("input[name=address1]")).SendKeys(userInfo.Address1);
+			driver.FindElement(By.CssSelector("input[name=address2]")).SendKeys(userInfo.Address2);
+			driver.FindElement(By.CssSelector("input[name=postcode]")).SendKeys(userInfo.Postcode);
+			driver.FindElement(By.CssSelector("input[name=city]")).SendKeys(userInfo.City);
 
-			driver.FindElement(By.CssSelector("input[name=email]")).SendKeys(userInfo.email);
-			driver.FindElement(By.CssSelector("input[name=phone]")).SendKeys(userInfo.phone);
-			driver.FindElement(By.CssSelector("input[name=password]")).SendKeys(userInfo.password);
-			driver.FindElement(By.CssSelector("input[name=confirmed_password]")).SendKeys(userInfo.password);
+			driver.FindElement(By.CssSelector("input[name=email]")).SendKeys(userInfo.Email);
+			driver.FindElement(By.CssSelector("input[name=phone]")).SendKeys(userInfo.Phone);
+			driver.FindElement(By.CssSelector("input[name=password]")).SendKeys(userInfo.Password);
+			driver.FindElement(By.CssSelector("input[name=confirmed_password]")).SendKeys(userInfo.Password);
 
 			//Thread.Sleep(500);
 			var zoneSelect = new SelectElement(driver.FindElement(By.CssSelector("select[name=zone_code]")));
@@ -66,8 +66,8 @@ namespace csharp_example
 
 			driver.FindElement(By.CssSelector("#box-account > div > ul > li:nth-child(4) > a")).Click();
 
-			driver.FindElement(By.CssSelector("input[name=email]")).SendKeys(userInfo.email);
-			driver.FindElement(By.CssSelector("input[name=password]")).SendKeys(userInfo.password);
+			driver.FindElement(By.CssSelector("input[name=email]")).SendKeys(userInfo.Email);
+			driver.FindElement(By.CssSelector("input[name=password]")).SendKeys(userInfo.Password);
 			driver.FindElement(By.CssSelector("button[name=login]")).Click();
 
 			driver.FindElement(By.CssSelector("#box-account > div > ul > li:nth-child(4) > a")).Click();
@@ -76,17 +76,17 @@ namespace csharp_example
 		public class UserInfo
 		{
 			public UserInfo() { }
-			public string taxId { get; set; }
-			public string company { get; set; }
-			public string firstname { get; set; }
-			public string lastname { get; set; }
-			public string address1 { get; set; }
-			public string address2 { get; set; }
-			public string postcode { get; set; }
-			public string city { get; set; }
-			public string email { get; set; }
-			public string phone { get; set; }
-			public string password { get; set; }
+			public string TaxId { get; set; }
+			public string Company { get; set; }
+			public string Firstname { get; set; }
+			public string Lastname { get; set; }
+			public string Address1 { get; set; }
+			public string Address2 { get; set; }
+			public string Postcode { get; set; }
+			public string City { get; set; }
+			public string Email { get; set; }
+			public string Phone { get; set; }
+			public string Password { get; set; }
 		}
 	}
 }
