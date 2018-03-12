@@ -41,6 +41,8 @@ namespace csharp_example
 
 				//switch to new window
 				driver.SwitchTo().Window(newWindow);
+
+				// for clarity
 				Thread.Sleep(500);
 
 				//close new window
