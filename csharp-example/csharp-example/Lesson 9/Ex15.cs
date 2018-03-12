@@ -9,7 +9,7 @@ using OpenQA.Selenium.Support.UI;
 namespace csharp_example
 {
 	[TestFixture]
-	public class Ex15 : TestBase
+	public class Ex15 : TestBaseOld
 	{
 		[SetUp]
 		public void Start()

@@ -7,7 +7,7 @@ using OpenQA.Selenium.Support.UI;
 namespace csharp_example
 {
 	[TestFixture]
-	public class ESRFirefoxTests : TestBase
+	public class ESRFirefoxTests : TestBaseOld
 	{
 		[SetUp]
 		public void Start()

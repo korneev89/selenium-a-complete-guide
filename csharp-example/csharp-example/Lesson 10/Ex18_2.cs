@@ -11,7 +11,7 @@ using System.Web.Script.Serialization;
 namespace csharp_example
 {
 	[TestFixture]
-	public class BrowserMob : TestBase
+	public class BrowserMob : TestBaseOld
 	{
 		[Test]
 		public void UsingBrowserMob()

@@ -9,7 +9,7 @@ using OpenQA.Selenium.Support.UI;
 namespace csharp_example
 {
 	[TestFixture]
-	public class TestBase
+	public class TestBaseOld
 	{
 		public IWebDriver driver;
 		public WebDriverWait wait;
