@@ -34,6 +34,5 @@ namespace csharp_example
 			driver.FindElement(By.Name("login")).Click();
 			wait.Until(d => d.FindElement(By.Id("box-apps-menu")));
 		}
-
 	}
 }

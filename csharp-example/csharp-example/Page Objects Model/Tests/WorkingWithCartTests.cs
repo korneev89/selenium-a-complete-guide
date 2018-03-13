@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 
 namespace csharp_example
 {
@@ -11,7 +9,7 @@ namespace csharp_example
 		[Test]
 		public void AddAndRemoveProductsFromCart()
 		{
-			//log as admin
+			//log in as admin if necessary
 			//app.LoginIfNotLoggedIn();
 
 			app.AddProductsToCart(3);

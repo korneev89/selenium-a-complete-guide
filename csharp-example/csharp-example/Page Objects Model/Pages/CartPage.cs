@@ -12,7 +12,7 @@ namespace csharp_example
 
 		internal void Open()
 		{
-			driver.Url = "http://localhost:8080/litecart/en/";
+			driver.Url = "http://localhost:8080/litecart/en/checkout";
 		}
 
 		[FindsBy(How = How.CssSelector, Using = "button[name=remove_cart_item]")]
