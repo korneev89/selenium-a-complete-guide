@@ -52,5 +52,10 @@ namespace csharp_example
 
 			return GetNewWindow;
 		}
+
+		public static Func<IWebDriver, string> ThereIsWindowOtherThanOldSharp(IEnumerable<string> oldWindows)
+		{
+				return driver => driver.WindowHandles.Except(oldWindows).ToList().Single();
+		}
 	}
 }
